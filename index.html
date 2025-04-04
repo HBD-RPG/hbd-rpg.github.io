@@ -92,6 +92,11 @@
             text-align: center;
         }
 
+        /* Add the 'hidden' class to hide content */
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -125,6 +130,7 @@
             </div>
         </section>
 
+        <!-- Windows Manual -->
         <section id="windows-manual" class="manual box hidden">
             <h2>Windows Installation Guide</h2>
             <div class="step">
@@ -144,6 +150,7 @@
             </div>
         </section>
 
+        <!-- Linux Manual -->
         <section id="linux-manual" class="manual box hidden">
             <h2>Linux Installation Guide</h2>
             <div class="step">
@@ -167,7 +174,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 The Adventure of Iroas. All Rights Reserved.</p>
+        <p></p> <!-- Empty footer content -->
     </footer>
 
     <script>
@@ -176,7 +183,7 @@
             document.getElementById("windows-manual").classList.add("hidden");
             document.getElementById("linux-manual").classList.add("hidden");
 
-            // Show the correct manual based on the platform selected
+            // Show the selected manual based on the platform clicked
             if (platform === "windows") {
                 document.getElementById("windows-manual").classList.remove("hidden");
             } else if (platform === "linux") {
