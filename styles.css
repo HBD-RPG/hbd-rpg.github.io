@@ -1,110 +1,98 @@
-* {
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2d2d;
+    color: #fff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
     text-align: center;
 }
 
 header {
-    background: #3a3a3a;
-    color: white;
+    background-color: #333;
     padding: 20px 0;
 }
 
-header h1 {
-    font-size: 2.5rem;
+h1 {
+    font-size: 3em;
+    margin: 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.hero {
-    background: #354f60;
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.hero .btn {
-    background-color: #00aaff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-}
-
-.hero .btn:hover {
-    background-color: #007b8a;
-}
-
-.download-section, .play-section {
-    background: #ffffff;
-    padding: 40px 20px;
+h2 {
+    font-size: 2em;
     margin-top: 40px;
 }
 
-.download-section h2, .play-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 10px auto;
 }
 
-.download-section .btn, .play-section .btn {
-    background-color: #ff6f61;
+main {
+    padding: 40px 20px;
+}
+
+section {
+    padding: 40px 0;
+    border-bottom: 2px solid #444;
+}
+
+.screenshots img {
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.testimonials blockquote {
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #1f8dd6;
     color: white;
-    padding: 15px 25px;
+    padding: 15px 30px;
     text-decoration: none;
-    font-size: 1.1rem;
-    margin-top: 15px;
-    display: inline-block;
     border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
 }
 
-.download-section .btn:hover, .play-section .btn:hover {
-    background-color: #e05d4f;
+.btn:hover {
+    background-color: #155a8a;
 }
 
 footer {
-    background: #3a3a3a;
-    color: white;
+    background-color: #333;
     padding: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+.manual {
+    background-color: #444;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.manual h2 {
+    color: #ffcc00;
 }
