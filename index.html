@@ -3,8 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Iroas</title>
+    <title>Download & Play - The Adventure of Iroas</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #222;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #007acc;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #005fa3;
+        }
+
+        .play-btn {
+            background: #ff9900;
+        }
+
+        .play-btn:hover {
+            background: #e68a00;
+        }
+
+        .box {
+            background: white;
+            padding: 50px;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .manual img {
+            max-width: 80%;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,50 +82,79 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>An Epic Journey Awaits</h2>
-                <p>Explore a world full of magic, mystery, and adventure. Shape your destiny in The Adventure of Iroas.</p>
-                <div class="btn-container">
-                    <a href="download.html" class="btn">Download</a>
-                    <a href="play.html" class="btn">Play Online</a>
-                </div>
+        <section class="box">
+            <h2>Play Now</h2>
+            <p>Choose your platform to start your adventure.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="showManual('windows')">Windows</button>
+                <button class="btn" onclick="showManual('linux')">Linux</button>
+                <a href="play.html" class="btn play-btn">Play Online</a>
             </div>
         </section>
 
-        <section class="story box">
-            <h2>The Story</h2>
-            <p>The kingdom of Iroas is on the brink of destruction. Dark forces are rising, and only you can restore balance.</p>
+        <section id="windows-manual" class="manual box hidden">
+            <h2>Windows Installation Guide</h2>
+            <ol>
+                <li>
+                    <strong>Download the game</strong>
+                    <p>Click the button below to download the game for Windows.</p>
+                    <a href="downloads/mygame-windows.zip" class="btn">Download for Windows</a>
+                </li>
+                <li>
+                    <strong>Extract the ZIP file</strong>
+                    <p>Right-click on the downloaded file and select <em>"Extract All"</em>.</p>
+                    <img src="images/extract-windows.png" alt="Extracting ZIP file in Windows">
+                </li>
+                <li>
+                    <strong>Run the Installer</strong>
+                    <p>Double-click on <em>"setup.exe"</em> and follow the installation steps.</p>
+                    <img src="images/setup-windows.png" alt="Running setup on Windows">
+                </li>
+                <li>
+                    <strong>Start the Game</strong>
+                    <p>After installation, launch the game from your desktop shortcut.</p>
+                </li>
+            </ol>
         </section>
 
-        <section class="gameplay box">
-            <h2>Features</h2>
-            <ul>
-                <li>⚔️ Intense Combat System</li>
-                <li>🌍 Open-World Exploration</li>
-                <li>🧩 Puzzle Solving & Secrets</li>
-                <li>🎭 Meaningful Choices</li>
-            </ul>
-        </section>
-
-        <section class="screenshots box">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="images/screenshot1.jpg" alt="Screenshot 1">
-                <img src="images/screenshot2.jpg" alt="Screenshot 2">
-                <img src="images/screenshot3.jpg" alt="Screenshot 3">
-            </div>
-        </section>
-
-        <section class="reviews box">
-            <h2>What Players Say</h2>
-            <blockquote>“An incredible RPG experience!” – Alex G.</blockquote>
-            <blockquote>“The world is stunning and full of secrets!” – Jamie L.</blockquote>
+        <section id="linux-manual" class="manual box hidden">
+            <h2>Linux Installation Guide</h2>
+            <ol>
+                <li>
+                    <strong>Download the game</strong>
+                    <p>Click the button below to download the game for Linux.</p>
+                    <a href="downloads/mygame-linux.tar.gz" class="btn">Download for Linux</a>
+                </li>
+                <li>
+                    <strong>Extract the files</strong>
+                    <p>Open a terminal and run:</p>
+                    <code>tar -xvzf mygame-linux.tar.gz</code>
+                    <img src="images/extract-linux.png" alt="Extracting files in Linux">
+                </li>
+                <li>
+                    <strong>Run the game</strong>
+                    <p>Navigate to the game folder and start the game with:</p>
+                    <code>./start_game.sh</code>
+                </li>
+            </ol>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 The Adventure of Iroas. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showManual(platform) {
+            document.getElementById("windows-manual").classList.add("hidden");
+            document.getElementById("linux-manual").classList.add("hidden");
+
+            if (platform === "windows") {
+                document.getElementById("windows-manual").classList.remove("hidden");
+            } else if (platform === "linux") {
+                document.getElementById("linux-manual").classList.remove("hidden");
+            }
+        }
+    </script>
 </body>
 </html>
