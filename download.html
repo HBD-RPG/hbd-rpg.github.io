@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download The Adventure of Iroas</title>
+    <title>Download - The Adventure of Iroas</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -13,16 +13,16 @@
     </header>
 
     <main>
-        <section>
-            <h2>Download Options</h2>
-            <p>Select your platform and start your adventure!</p>
-            <div class="buttons">
+        <section class="box">
+            <h2>Choose Your Platform</h2>
+            <p>Select your system and follow the installation instructions.</p>
+            <div class="btn-container">
                 <a href="downloads/mygame-windows.zip" class="btn" onclick="showManual('windows')">Download for Windows</a>
                 <a href="downloads/mygame-linux.tar.gz" class="btn" onclick="showManual('linux')">Download for Linux</a>
             </div>
         </section>
 
-        <section id="windows-manual" class="manual hidden">
+        <section id="windows-manual" class="manual box hidden">
             <h2>Windows Installation Guide</h2>
             <ol>
                 <li>Download the ZIP file and extract it.</li>
@@ -32,7 +32,7 @@
             </ol>
         </section>
 
-        <section id="linux-manual" class="manual hidden">
+        <section id="linux-manual" class="manual box hidden">
             <h2>Linux Installation Guide</h2>
             <ol>
                 <li>Download the `.tar.gz` file and extract it using `tar -xvzf mygame-linux.tar.gz`.</li>
