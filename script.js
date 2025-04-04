@@ -1,9 +1,9 @@
 function showManual(platform) {
-    // Versteckt beide Anleitungen zuerst
+    // Verstecke beide Anleitungen zuerst
     document.getElementById("windows-manual").classList.add("hidden");
     document.getElementById("linux-manual").classList.add("hidden");
 
-    // Zeigt nur die richtige Anleitung
+    // Zeige die richtige Anleitung
     if (platform === "windows") {
         document.getElementById("windows-manual").classList.remove("hidden");
     } else if (platform === "linux") {
