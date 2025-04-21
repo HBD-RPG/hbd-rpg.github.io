@@ -30,6 +30,10 @@
 
         .btn-container {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         .btn {
@@ -39,8 +43,9 @@
             text-decoration: none;
             border-radius: 8px;
             font-size: 1.2em;
-            margin: 10px;
             transition: background 0.3s;
+            white-space: nowrap;
+            display: inline-block;
         }
 
         .btn:hover {
@@ -53,6 +58,13 @@
 
         .play-btn:hover {
             background: #e68a00;
+        }
+
+        /* Make button tags look like anchor buttons */
+        button.btn {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .box {
@@ -92,7 +104,6 @@
             text-align: center;
         }
 
-        /* Add the 'hidden' class to hide content */
         .hidden {
             display: none;
         }
@@ -140,7 +151,7 @@
             </div>
             <div class="step">
                 <strong>Step 2: Extract the ZIP file</strong>
-                <p>Right-click on the downloaded file and select <em>\"Extract All\"</em>.</p>
+                <p>Right-click on the downloaded file and select <em>"Extract All"</em>.</p>
                 <img src="images/extract-windows.png" alt="Extracting ZIP file in Windows">
             </div>
             <div class="step">
@@ -174,16 +185,14 @@
     </main>
 
     <footer>
-        <p></p> <!-- Empty footer content -->
+        <p></p>
     </footer>
 
     <script>
         function showManual(platform) {
-            // Hide both manuals
             document.getElementById("windows-manual").classList.add("hidden");
             document.getElementById("linux-manual").classList.add("hidden");
 
-            // Show the selected manual based on the platform clicked
             if (platform === "windows") {
                 document.getElementById("windows-manual").classList.remove("hidden");
             } else if (platform === "linux") {
